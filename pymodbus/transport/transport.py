@@ -469,7 +469,7 @@ class ModbusProtocol(asyncio.BaseProtocol):
                 Log.debug(
                     "Wait {} {} ms before reconnecting.",
                     self.comm_params.comm_name,
-                    self.reconnect_delay_current * 1000,
+                    self.reconnect_delay_current,
                 )
                 await asyncio.sleep(self.reconnect_delay_current)
                 if await self.connect():
